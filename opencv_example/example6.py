@@ -1,5 +1,5 @@
 import cv2
-capture = cv2.VideoCapture("../video_file.avi")
+capture = cv2.VideoCapture("../ImageDirectory/video_file.avi")
 if not capture.isOpened(): raise Exception("Could not open video stream or file")
 frame_rate = capture.get(cv2.CAP_PROP_FPS)
 delay = int(1000 / frame_rate)
