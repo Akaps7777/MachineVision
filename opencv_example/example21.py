@@ -1,20 +1,22 @@
 import numpy as np, cv2
-from Common.utils import contain_pts
 
 def draw_rect(img):
     rois = [(p-small, small * 2) for p in pts1]
     for (x,y), (w,h) in np.int32(rois):
-        rois = img[y:y+h, x:x+w]
+        roi = img[y:y+h, x:x+w]
         val = np.full(roi.shape, 80, np.uint8)
         cv2.add(roi,val,roi)
         cv2.rectangle(img, (x,y,w,h), (0,255,0),1)
     cv2.polylines(img, [pts1.astype(int)], True, (0,255,0),1)
-    cv2.imshow("select rext", img)
+    cv2.imshow("select rect", img)
 
 def warp(img):
     perspect_mat = cv2.getPerspectiveTransform(pts1,pts2)
     dst = cv2.warpPerspective(img, perspect_mat, (400,350), cv2.INTER_CUBIC)
     cv2.imshow("perspective transform", dst)
+
+def contain_pts(p, p1, p2):
+    return p1[0] <= p[0] < p2[0] and p1[1] <= p[1] < p2[1]
 
 def onMouse(event, x, y, flags, param):
     global check
@@ -40,6 +42,5 @@ pts2 = np.float32([(0,0),(400,0),(400,350),(0,350)])
 
 draw_rect(np.copy(image))
 cv2.setMouseCallback("select rect", onMouse, 0)
-def contain_pts(p, p1, p2):
-    return p1[0] <= p[0] < p2[0] and p1[1] <= p[1] < p2[1]
+cv2.waitKey(0)
 
