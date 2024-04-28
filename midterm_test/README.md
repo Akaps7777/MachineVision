@@ -21,7 +21,7 @@
 ## 2. 에지 검출: 입력 이미지를 그레이스케일로 변환 후, cv2.medianBlur로 노이즈를 줄이고, cv2.adaptiveThreshold를 사용하여 이미지의 에지 검출
 ## 3. 만화 효과 적용: 양자화된 색상 이미지와 에지 검출 이미지를 결합하여 만화 효과를 적용 (cv2.bitwise_and 함수를 사용하여 양자화된 색상 이미지에 에지 검출 이미지를 마스크로 적용)
 # 4. face_warping_filter
-![image](https://github.com/Akaps7777/MachineVision/assets/145246610/1e65cdc8-cc0f-459f-a37b-762e4de59443)
+##__adapt__
 
 # 5. custom_filter
 ![image](https://github.com/Akaps7777/MachineVision/assets/145246610/f1eceea1-8ae9-49c3-987a-b9ee27d52063)
