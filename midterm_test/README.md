@@ -14,6 +14,6 @@
 ![image](https://github.com/Akaps7777/MachineVision/assets/145246610/1e65cdc8-cc0f-459f-a37b-762e4de59443)
 
 # 5. custom_filter
-![Uploading image.png…]()
-![Uploading image.png…]()
+![image](https://github.com/Akaps7777/MachineVision/assets/145246610/f1eceea1-8ae9-49c3-987a-b9ee27d52063)
+![image](https://github.com/Akaps7777/MachineVision/assets/145246610/1cac38b4-a9ee-4243-ac86-6c6f93161c65)
 
