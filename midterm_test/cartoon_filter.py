@@ -22,4 +22,3 @@ def cartoon_filter(image):
 cartoon_image = cartoon_filter(image)
 cv2.imshow('cartoon_filter', cartoon_image)
 cv2.waitKey(0)
-cv2.destroyAllWindows()

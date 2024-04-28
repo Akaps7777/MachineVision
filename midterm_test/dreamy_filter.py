@@ -24,4 +24,4 @@ def dreamy_filter(image):
 dreamy_image = dreamy_filter(image)
 cv2.imshow('dreamy_filter', dreamy_image)
 cv2.waitKey(0)
-cv2.destroyAllWindows()
+
