@@ -21,8 +21,13 @@
 ## 2. 에지 검출: 입력 이미지를 그레이스케일로 변환 후, cv2.medianBlur로 노이즈를 줄이고, cv2.adaptiveThreshold를 사용하여 이미지의 에지 검출
 ## 3. 만화 효과 적용: 양자화된 색상 이미지와 에지 검출 이미지를 결합하여 만화 효과를 적용 (cv2.bitwise_and 함수를 사용하여 양자화된 색상 이미지에 에지 검출 이미지를 마스크로 적용)
 # 4. face_warping_filter
-##__adapt__
-
+![image](https://github.com/Akaps7777/MachineVision/assets/145246610/474f18b3-5b68-4995-9ff8-06dd437a827c)
+![image](https://github.com/Akaps7777/MachineVision/assets/145246610/c371dbec-b4e3-4908-9f97-5bd45896fe16)
+## 1. cv2, dlib, numpy 라이브러리를 사용하여 구현
+## 2. load_landmarks 함수: 이미지에서 얼굴을 검출하고, 그 얼굴에 대한 랜드마크를 반환
+## 3. cv2.cvtColor(image, cv2.COLOR_BGR2GRAY): 이미지를 흑백으로 변환하여 얼굴 검출 능력 향상, (detector(gray): 흑백 이미지에서 얼굴을 검출), predictor(gray, faces[0]): 검출된 첫 번째 얼굴에 대해 랜드마크를 검출
+## 4. enlarge_eyes 함수: 이미지 경로와 확대 비율(scale)을 입력받아, 해당 이미지에서 눈을 확대 [dlib.get_frontal_face_detector(): 얼굴 검출기를 초기화, dlib.shape_predictor('shape_predictor_68_face_landmarks.dat'): 랜드마크 예측기를 초기화, load_landmarks(image, predictor, detector): 위에서 정의한 함수를 사용하여 얼굴 랜드마크를 로드, 눈의 랜드마크(왼쪽 눈은 36:41, 오른쪽 눈은 42:47)를 사용하여 각 눈의 중심을 계산, 해당 중심을 기준으로 눈 영역(ROI)을 확대, 확대된 눈 영역을 원본 이미지에 다시 삽입]
+## 5. cv2.imshow("Enlarged Eyes", image): 확대된 눈이 적용된 이미지를 나타냄
 # 5. custom_filter
 ![image](https://github.com/Akaps7777/MachineVision/assets/145246610/f1eceea1-8ae9-49c3-987a-b9ee27d52063)
 ![image](https://github.com/Akaps7777/MachineVision/assets/145246610/1cac38b4-a9ee-4243-ac86-6c6f93161c65)
